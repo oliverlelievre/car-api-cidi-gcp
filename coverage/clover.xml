@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1684631370542" clover="3.2.0">
+  <project timestamp="1684631370542" name="All files">
+    <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3" elements="15" coveredelements="15" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1"/>
+    <file name="carValueService.ts" path="C:\Users\hello\Desktop\Mission Ready (Level-5)\mission-4-level-5\src\services\carValueService.ts">
+      <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="5" type="stmt"/>
+      <line num="5" count="5" type="cond" truecount="3" falsecount="0"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="10" count="14" type="stmt"/>
+      <line num="13" count="14" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
