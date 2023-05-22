@@ -5,5 +5,5 @@ env.config()
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
-  console.log(`server starterd on port ${PORT}`)
+  console.log(`server started on port ${PORT}`)
 })
