@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684721163964" clover="3.2.0">
-  <project timestamp="1684721163966" name="All files">
-    <metrics statements="28" coveredstatements="26" conditionals="5" coveredconditionals="3" methods="4" coveredmethods="4" elements="37" coveredelements="33" complexity="0" loc="28" ncloc="28" packages="4" files="4" classes="4"/>
+<coverage generated="1684722523674" clover="3.2.0">
+  <project timestamp="1684722523674" name="All files">
+    <metrics statements="28" coveredstatements="27" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="4" elements="37" coveredelements="35" complexity="0" loc="28" ncloc="28" packages="4" files="4" classes="4"/>
     <package name="src">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="C:\Users\hello\Desktop\Mission Ready (Level-5)\mission-4-level-5\src\app.ts">
@@ -40,18 +40,18 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="9" coveredstatements="8" conditionals="3" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <file name="carValueService.ts" path="C:\Users\hello\Desktop\Mission Ready (Level-5)\mission-4-level-5\src\services\carValueService.ts">
-        <metrics statements="9" coveredstatements="8" conditionals="3" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="cond" truecount="2" falsecount="1"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="5" count="6" type="cond" truecount="3" falsecount="0"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
       </file>
     </package>
   </project>

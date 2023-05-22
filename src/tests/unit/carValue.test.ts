@@ -12,7 +12,7 @@ describe('calculateCarValue', () => {
   it('should handle empty model name and return null', () => {
     const model = '';
     const year = 2014;
-    const result = carValueService.calculateCarValue(year);
+    const result = carValueService.calculateCarValue(model, year);
     expect(result).toBeNull();
   });
 
