@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "dev": "tsnd src/server.ts",
     "build": "tsc"
   },
