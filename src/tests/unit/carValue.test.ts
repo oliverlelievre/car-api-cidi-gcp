@@ -1,4 +1,4 @@
-import carValueService from '../services/carValueService';
+import carValueService from '../../services/carValueService';
 
 describe('calculateCarValue', () => {
   it('should return the correct car value for valid input', () => {
