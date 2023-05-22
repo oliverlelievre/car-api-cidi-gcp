@@ -8,12 +8,11 @@ const carValueController = {
     getCarValue(req, res) {
         const { model, year } = req.body;
         const carValue = carValueService_1.default.calculateCarValue(model, year);
-        if (carValue === null) {
-            res.status(400).json({ error: 'Invalid input values' });
-        }
-        else {
-            res.json({ car_value: carValue });
-        }
+        // if (carValue === null) {
+        //   res.status(400).json({ error: 'Invalid input values' });
+        // } else {
+        res.json({ car_value: carValue });
+        //  }
     },
 };
 exports.default = carValueController;
