@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "dev": "tsnd src/server.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "npm run build && node build/server.js"
   },
   "keywords": [],
   "author": "",
