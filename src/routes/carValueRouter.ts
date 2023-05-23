@@ -1,8 +1,8 @@
-import express from 'express';
-import carValueController from '../controllers/carValueController';
+import express from 'express'
+import carValueController from '../controllers/carValueController'
 
-const router = express.Router();
+const router = express.Router()
 
-router.post('/', carValueController.getCarValue);
+router.post('/', carValueController.getCarValue)
 
-export default router;
+export default router
