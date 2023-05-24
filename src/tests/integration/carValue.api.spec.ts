@@ -2,18 +2,13 @@ import { Server } from 'http'
 import app from '../../app'
 import request from 'supertest'
 
-describe('tasks api', () => {
-  test('it should return the calculated car value', async () => {
+describe('CarValue API', () => {
+  it('should all car records predefined value', async () => {
     // Arrange
-    const expected = {
-      car_value: 6620,
-    }
+    const expected = [{ id: 1, model: 'Civic', year: 2014, value: 6614 }]
 
     // Act
-    const res = await request(app).post('/car-value').send({
-      model: 'Civic',
-      year: 2020,
-    })
+    const res = await request(app).get('/api/car-value')
 
     // Assert
     expect(res.status).toEqual(200)

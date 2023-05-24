@@ -1,17 +1,33 @@
 import { Request, Response } from 'express'
-import carValueService from '../services/carValueService'
+import * as carValueService from '../services/carValueService'
 
-const carValueController = {
-  getCarValue(req: Request, res: Response) {
-    const { model, year } = req.body
-    const carValue = carValueService.calculateCarValue(model, year)
-
-    if (carValue === null) {
-      res.status(400).json({ error: 'Invalid input values' })
-    } else {
-      res.json({ car_value: carValue })
-    }
-  },
+export const getAllCars = (req: Request, res: Response) => {
+  const carRecords = carValueService.getAllCars()
+  res.send(carRecords)
 }
 
-export default carValueController
+export const carAdd = (req: Request, res: Response) => {
+  try {
+    const model = req.body.model
+    const year = req.body.year
+    const input = {
+      model: model,
+      year: year,
+    }
+    const newInput = carValueService.carAdd(input)
+    res.send(newInput)
+  } catch (e) {
+    res.status(404).send(e)
+  }
+}
+
+export const getOneCar = (req: Request, res: Response) => {
+  const carID = parseInt(req.params.id)
+
+  try {
+    const response = carValueService.getOneCar(carID)
+    res.send(response)
+  } catch (e) {
+    res.status(404).send(e)
+  }
+}

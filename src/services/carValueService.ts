@@ -1,23 +1,27 @@
-import { CarValueService } from '../types/carValue'
+import { calculateValue } from '../logic/logic'
+import { Car, carInput } from '../types/carValue'
 
-const carValueService = {
-  calculateCarValue(model: string, year: number): number | null {
-    const modelName = model.replace(/[^a-zA-Z]/g, '').toUpperCase()
+let carRecords: Car[] = [{ id: 1, model: 'Civic', year: 2014, value: 6614 }]
 
-    if (modelName.length === 0 || year <= 0) {
-      return null
-    }
-
-    const alphabetPositions = [...modelName].map(
-      (char) => char.charCodeAt(0) - 64
-    )
-
-    const carValue =
-      alphabetPositions.reduce((sum, position) => sum + position, 0) * 100 +
-      year
-
-    return carValue
-  },
+export const getAllCars = () => {
+  return carRecords
 }
 
-export default carValueService
+export const carAdd = (input: carInput) => {
+  const newInput = {
+    id: carRecords.length + 1,
+    model: input.model,
+    year: input.year,
+    value: calculateValue(input.model, input.year),
+  }
+  carRecords.push(newInput)
+  return newInput
+}
+
+export const getOneCar = (carID: number) => {
+  const matchedRecord = carRecords.find((t) => t.id === carID)
+  if (!matchedRecord) {
+    throw 'No record found.'
+  }
+  return matchedRecord
+}
