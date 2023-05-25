@@ -5,7 +5,7 @@ import request from 'supertest'
 describe('test the car value API', () => {
   it('should all car records value', async () => {
     // Arrange
-    const expected = [{ id: 1, model: 'Civic', year: 2014, value: 6614 }]
+    const expected = [{ id: 1, model: 'Holden', year: 2008, value: 7808 }]
 
     // Act
     const res = await request(app).get('/api/car-value')

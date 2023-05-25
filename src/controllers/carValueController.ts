@@ -2,8 +2,8 @@ import { Request, Response } from 'express'
 import * as carValueService from '../services/carValueService'
 
 export const getAllCars = (req: Request, res: Response) => {
-  const carRecord = carValueService.getAllCars()
-  res.send(carRecord)
+  const allCars = carValueService.getAllCars()
+  res.send(allCars)
 }
 
 export const carAdd = (req: Request, res: Response) => {

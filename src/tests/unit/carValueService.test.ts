@@ -2,12 +2,12 @@ import * as carValueService from '../../services/carValueService';
 import { testCarValue, carInput } from '../../types/carValue'
 
 
-// cars api to return default car record
+// test for carValueService.getAllCars() to return all car records
 
 describe('Testing carValueService.getAllCars()', () => {
   test('should return 1 record of car', () => {
     //Arrange
-    const expected = [{ id: 1, model: 'Civic', year: 2014, value: 6614 }]
+    const expected = [{ id: 1, model: 'Holden', year: 2008, value: 7808 }]
 
     //Act
     const actual = carValueService.getAllCars()
@@ -23,11 +23,11 @@ describe('Testing carValueService.carAdd()', () => {
   test('should add a new record of car', () => {
     const input = {
       id: 2,
-      model: 'Civic',
-      year: 2014,
-      value: 6614,
+      model: 'Holden',
+      year: 2008,
+      value: 7808,
     }
-    const expected = { id: 2, model: 'Civic', year: 2014, value: 6614 }
+    const expected = { id: 2, model: 'Holden', year: 2008, value: 7808 }
     const actual = carValueService.carAdd(input)
     expect(actual).toEqual(expected)
   })
@@ -37,31 +37,31 @@ describe('Testing carValueService.carAdd()', () => {
 
 const testCases: testCarValue[] = [
   {
-    model: 'C1vic',
-    year: 2014,
+    model: 'Hold3n',
+    year: 2008,
     expected:
       'Please input a valid model.',
   },
   {
     model: 99,
-    year: 2014,
+    year: 2008,
     expected:
       'Please input a valid model.',
   },
   {
     model: false,
-    year: 2014,
+    year: 2008,
     expected:
       'Please input a valid model.',
   },
   {
     model: '',
-    year: 2014,
+    year: 2008,
     expected: 'Model is empty.',
   },
   {
     model: 'Holden R8',
-    year: 2014,
+    year: 2008,
     expected:
       'Please input a valid model.',
   },
@@ -77,7 +77,7 @@ const testCases: testCarValue[] = [
   },
   {
     model: 'Holden',
-    year: 2030,
+    year: 2050,
     expected: 'Please input a valid year from 1900 to 2023',
   },
   {
@@ -103,13 +103,13 @@ describe('Testing carValueService.carAdd() to return an error', () => {
   })
 })
 
-// cars api to get a car record by id
+// test for carValueService.getCarId
 
 describe('Testing carValueService.getCarId', () => {
-  test(`Test ID 1 and expecting { id: 1, model: 'Civic', year: 2014, value: 6614 }`, () => {
+  test(`Test ID 1 and expecting { id: 1, model: Holden, year: 2008, value: 7808 }`, () => {
     //Arrange
     const id = 1
-    const expected = { id: 1, model: 'Civic', year: 2014, value: 6614 }
+    const expected = { id: 1, model: 'Holden', year: 2008, value: 7808 }
 
     //Act
     const actual = carValueService.getCarId(id)
