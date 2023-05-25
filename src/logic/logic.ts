@@ -1,15 +1,15 @@
 export const calculateValue = (model: string, year: number) => {
-  const mdl = computeModel(checkModel(model))
-  const yr = checkYear(year)
+  const modelCheck = calculateModel(checkModel(model))
+  const yearCheck = checkYear(year)
 
-  if (typeof mdl !== 'number' || typeof yr !== 'number') {
-    throw 'Make sure to input model (string) and year (number) correctly.'
+  if (typeof modelCheck !== 'number' || typeof yearCheck !== 'number') {
+    throw 'Make sure that model (string) and year (number) are correct.'
   }
 
-  const result = mdl + yr
+  const result = modelCheck + yearCheck
 
   if (!result) {
-    throw 'Make sure to input model and year correctly.'
+    throw 'Make sure that model and year are correct.'
   }
 
   if (result === Infinity) {
@@ -24,20 +24,20 @@ const checkModel = (str: string) => {
   if (typeof str === 'string' && /^[a-zA-Z]+$/.test(str)) {
     return str
   } else {
-    throw `Please input a valid model. A string of alphabet with no spaces is accepted.`
+    throw `Please input a valid model.`
   }
 }
 
 const checkYear = (num: number) => {
   var currentDate = new Date()
   if (num === undefined) throw 'Year is empty.'
-  if (num < 1950 || num > currentDate.getFullYear())
-    throw `Please input a valid year from 1950 to ${currentDate.getFullYear()}`
+  if (num < 1900 || num > currentDate.getFullYear())
+    throw `Please input a valid year from 1900 to ${currentDate.getFullYear()}`
   if (typeof num !== 'number') throw `Year should be a number.`
   return num
 }
 
-const computeModel = (str: string) => {
+const calculateModel = (str: string) => {
   checkModel(str)
   let output = 0
   const char = str.toUpperCase().split('')

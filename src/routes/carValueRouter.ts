@@ -7,6 +7,6 @@ router.get('/car-value/', carValueController.getAllCars)
 
 router.post('/car-value/', carValueController.carAdd)
 
-router.get('/car-value/:id', carValueController.getOneCar)
+router.get('/car-value/:id', carValueController.getCarId)
 
 export default router

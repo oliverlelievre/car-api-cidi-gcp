@@ -1,5 +1,5 @@
 import * as carValueService from '../../services/carValueService';
-import { testModelYear, carInput } from '../../types/carValue'
+import { testCarValue, carInput } from '../../types/carValue'
 
 
 // cars api to return default car record
@@ -17,7 +17,7 @@ describe('Testing carValueService.getAllCars()', () => {
   })
 })
 
-// cars api to add a new car record
+// carAdd to return new car record
 
 describe('Testing carValueService.carAdd()', () => {
   test('should add a new record of car', () => {
@@ -35,24 +35,24 @@ describe('Testing carValueService.carAdd()', () => {
 
 // cars api carAdd function that returns an error
 
-const testCases: testModelYear[] = [
+const testCases: testCarValue[] = [
   {
     model: 'C1vic',
     year: 2014,
     expected:
-      'Please input a valid model. A string of alphabet with no spaces is accepted.',
+      'Please input a valid model.',
   },
   {
     model: 99,
     year: 2014,
     expected:
-      'Please input a valid model. A string of alphabet with no spaces is accepted.',
+      'Please input a valid model.',
   },
   {
     model: false,
     year: 2014,
     expected:
-      'Please input a valid model. A string of alphabet with no spaces is accepted.',
+      'Please input a valid model.',
   },
   {
     model: '',
@@ -60,42 +60,42 @@ const testCases: testModelYear[] = [
     expected: 'Model is empty.',
   },
   {
-    model: 'Honda Civic',
+    model: 'Holden R8',
     year: 2014,
     expected:
-      'Please input a valid model. A string of alphabet with no spaces is accepted.',
+      'Please input a valid model.',
   },
   {
-    model: 'Civic',
-    year: -20,
-    expected: 'Please input a valid year from 1950 to 2023',
+    model: 'Holden',
+    year: -10,
+    expected: 'Please input a valid year from 1900 to 2023',
   },
   {
-    model: 'Civic',
-    year: 1945,
-    expected: 'Please input a valid year from 1950 to 2023',
+    model: 'Holden',
+    year: 1899,
+    expected: 'Please input a valid year from 1900 to 2023',
   },
   {
-    model: 'Civic',
+    model: 'Holden',
     year: 2030,
-    expected: 'Please input a valid year from 1950 to 2023',
+    expected: 'Please input a valid year from 1900 to 2023',
   },
   {
-    model: 'Civic',
+    model: 'Holden',
     year: false,
-    expected: 'Please input a valid year from 1950 to 2023',
+    expected: 'Please input a valid year from 1900 to 2023',
   },
 ]
 
 describe('Testing carValueService.carAdd() to return an error', () => {
-  testCases.map((tc) => {
-    test(`Model: ${tc.model} Year: ${tc.year} should return an Error: ${tc.expected}`, () => {
+  testCases.map((testCase) => {
+    test(`Model: ${testCase.model} Year: ${testCase.year} should return an Error: ${testCase.expected}`, () => {
       const input = {
         id: 3,
-        model: tc.model,
-        year: tc.year,
+        model: testCase.model,
+        year: testCase.year,
       }
-      const expected = tc.expected
+      const expected = testCase.expected
       expect(() => {
         carValueService.carAdd(input)
       }).toThrow(expected)
@@ -105,14 +105,14 @@ describe('Testing carValueService.carAdd() to return an error', () => {
 
 // cars api to get a car record by id
 
-describe('Testing carValueService.getOneCar', () => {
+describe('Testing carValueService.getCarId', () => {
   test(`Test ID 1 and expecting { id: 1, model: 'Civic', year: 2014, value: 6614 }`, () => {
     //Arrange
     const id = 1
     const expected = { id: 1, model: 'Civic', year: 2014, value: 6614 }
 
     //Act
-    const actual = carValueService.getOneCar(id)
+    const actual = carValueService.getCarId(id)
 
     //Assert
     expect(actual).toEqual(expected)
