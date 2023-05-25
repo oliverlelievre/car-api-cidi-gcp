@@ -36,7 +36,23 @@ describe('Testing carValueService.carAdd()', () => {
 // cars api carAdd function that returns an error
 
 const testCases: testCarValue[] = [
+
   {
+    model: 'Holden',
+    year: 1899,
+    expected: 'Please input a valid year from 1900 to 2023',
+  },
+  {
+    model: 'Holden',
+    year: 2050,
+    expected: 'Please input a valid year from 1900 to 2023',
+  },
+  {
+    model: 'Holden',
+    year: false,
+    expected: 'Please input a valid year from 1900 to 2023',
+  },
+    {
     model: 'Hold3n',
     year: 2008,
     expected:
@@ -70,25 +86,10 @@ const testCases: testCarValue[] = [
     year: -10,
     expected: 'Please input a valid year from 1900 to 2023',
   },
-  {
-    model: 'Holden',
-    year: 1899,
-    expected: 'Please input a valid year from 1900 to 2023',
-  },
-  {
-    model: 'Holden',
-    year: 2050,
-    expected: 'Please input a valid year from 1900 to 2023',
-  },
-  {
-    model: 'Holden',
-    year: false,
-    expected: 'Please input a valid year from 1900 to 2023',
-  },
 ]
 
 describe('Testing carValueService.carAdd() to return an error', () => {
-  testCases.map((testCase) => {
+  testCases.forEach((testCase) => {
     test(`Model: ${testCase.model} Year: ${testCase.year} should return an Error: ${testCase.expected}`, () => {
       const input = {
         id: 3,
